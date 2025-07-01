@@ -13,7 +13,7 @@ slider:
 
 > _“La natura non ha bisogno di gridare per essere ascoltata.”_
 
-In questa composizione, Franco Trento evoca la forma effimera e ramificata di un **corallo immerso in un mare notturno** o forse di una creatura silenziosa che si dischiude alla luce fioca del tramonto. Le tonalità pesca si stagliano su uno sfondo scuro, quasi abissale, creando un effetto di rilievo e profondità che suggerisce movimento, vita, **una metamorfosi in atto**.
+In questa composizione, Audely evoca la forma effimera e ramificata di un **corallo immerso in un mare notturno** o forse di una creatura silenziosa che si dischiude alla luce fioca del tramonto. Le tonalità pesca si stagliano su uno sfondo scuro, quasi abissale, creando un effetto di rilievo e profondità che suggerisce movimento, vita, **una metamorfosi in atto**.
 
 La materia pittorica è distribuita in tocchi densi e organici, come cellule in espansione, creando una **trama vivente** che pulsa sul confine tra astratto e figurativo.
 
