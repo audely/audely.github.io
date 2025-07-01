@@ -1,0 +1,46 @@
+<div id="cookieConsent" class="cookie-consent bg-light p-3 position-fixed bottom-0 w-100 shadow-lg d-none">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div>
+            <p class="mb-2">
+                Utilizziamo cookie per migliorare la tua esperienza. Puoi accettare tutti i cookie o gestire le tue preferenze.
+            </p>
+            <a href="/privacy-policy/" class="link-primary text-decoration-underline">Leggi la nostra politica sui cookie</a>
+        </div>
+        <div>
+            <button id="acceptAllCookies" class="btn btn-success me-2">Accetta tutti</button>
+            <button id="manageCookies" class="btn btn-secondary">Gestisci preferenze</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal per la gestione dei cookie -->
+<div class="modal fade" id="cookieSettingsModal" tabindex="-1" aria-labelledby="cookieSettingsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cookieSettingsModalLabel">Gestisci le preferenze dei cookie</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+            </div>
+            <div class="modal-body">
+                <form id="cookieSettingsForm">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="functionalCookies" checked disabled>
+                        <label class="form-check-label" for="functionalCookies">Cookie funzionali (necessari)</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="analyticsCookies">
+                        <label class="form-check-label" for="analyticsCookies">Cookie analitici</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="marketingCookies">
+                        <label class="form-check-label" for="marketingCookies">Cookie di marketing</label>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                <button id="saveCookiePreferences" type="button" class="btn btn-primary">Salva preferenze</button>
+            </div>
+        </div>
+    </div>
+</div>

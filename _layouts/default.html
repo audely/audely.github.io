@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title | default: site.title }}</title>
+  {% include seo.html %}
+  <link href="{{ '/assets/css/bootstrap/bootstrap.min.css' | relative_url }}" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+  <!-- CSS dinamico specifico per la pagina -->
+  {% if page.css %}
+    <link rel="stylesheet" href="{{ page.css | relative_url }}">
+  {% endif %}
+  {% if page.head-script %}
+    {{ page.head-script }}
+  {% endif %}
+</head>
+<body>
+  <script>
+      window.fastapiEndpoint = "{{ site.fastapi_endpoint }}";
+  </script> 
+<main>
+{% include nav-bar.html %}
+    {{ content }}
+{% include footer.html %}
+
+{% comment %}
+{% include cookie-consent.html %}
+{% endcomment %}
+
+</main>
+  <script src="{{ '/assets/js/bootstrap/bootstrap.bundle.min.js' | relative_url }}"></script>
+  <!--<script src="/assets/js/cookie-consent.js"></script>--> 
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  {% if page.script %}
+    {{ page.script }}
+  {% endif %}
+  {% include translation_prompt.html %}
+</body>
+</html>

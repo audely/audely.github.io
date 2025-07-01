@@ -1,0 +1,110 @@
+---
+layout: default
+---
+
+<article class="portfolio-item">
+  {% if page.image-header %}
+    <div class="portfolio-header" style="background-image: url('{{ page.image-header }}');"></div>
+  {% endif %}
+
+  <div class="portfolio-container">
+    <h1>{{ page.title }}</h1>
+    {% assign mesi = "Gennaio,Febbraio,Marzo,Aprile,Maggio,Giugno,Luglio,Agosto,Settembre,Ottobre,Novembre,Dicembre" | split: "," %}
+    {% assign mese_index = page.date | date: "%m" | minus: 1 %}
+    {% assign mese_italiano = mesi[mese_index] %}
+    <p class="date">{{ page.date | date: "%d" }} {{ mese_italiano }} {{ page.date | date: "%Y" }}</p>
+    
+    <p class="description">{{ page.description }}</p>
+
+    {% if page.image %}
+      <div class="main-image">
+        <img src="{{ page.image-paint }}" alt="{{ page.title }}">
+      </div>
+    {% endif %}
+
+    <div class="portfolio-content">
+      {{ content }}
+    </div>
+
+
+
+    {% if page.gallery %}
+      <div class="gallery">
+        {% for image in page.gallery %}
+          <div class="gallery-item">
+            <img src="{{ image }}" alt="Gallery image">
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <!-- Slider Bootstrap -->
+    {% if page.slider %}
+    <div id="carouselExampleIndicators" class="carousel slide mb-4" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            {% for image in page.slider %}
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ forloop.index0 }}" {% if forloop.first %}class="active"{% endif %} aria-label="Slide {{ forloop.index }}"></button>
+            {% endfor %}
+        </div>
+        <div class="carousel-inner">
+            {% for image in page.slider %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                <img src="{{ image }}" class="d-block w-100" alt="Slider Image">
+            </div>
+            {% endfor %}
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    {% endif %}
+    {% include accordion-faq.html %}
+    
+  </div>
+{% include about.html %}
+</article>
+
+<style>
+  .portfolio-header {
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .portfolio-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+  }
+
+  .main-image img {
+    width: 100%;
+    margin: 20px 0;
+    border-radius: 10px;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  .description {
+    font-size: 1.2em;
+    color: #555;
+  }
+</style>
+

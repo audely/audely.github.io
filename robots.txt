@@ -1,0 +1,15 @@
+# robots.txt per audely.github.io
+
+User-agent: *
+Allow: /
+
+# Blocca file e cartelle tecniche Jekyll
+Disallow: /vendor/
+Disallow: /node_modules/
+Disallow: /Gemfile
+Disallow: /Gemfile.lock
+Disallow: /.sass-cache/
+Disallow: /.jekyll-cache/
+
+# Sitemap
+Sitemap: https://audely.github.io/sitemap.xml

@@ -1,0 +1,79 @@
+---
+layout: default
+title: "Blog di Audely"
+description: "Ultime notizie, aggiornamenti e approfondimenti su integrazione sistemi, app personalizzate e automazioni."
+pagination:
+  enabled: true
+---
+
+<div class="container py-5">
+  <div class="text-center mb-5">
+    <h1 class="display-4 fw-bold mb-4">{{ page.title }}</h1>
+    {% if page.description %}
+      <p class="lead text-muted mt-3">{{ page.description }}</p>
+    {% endif %}
+  </div>
+  <div class="row g-4">
+    {%- assign date_format = "%-d %B %Y" -%}
+    {%- for post in paginator.posts -%}
+    <div class="col-md-6">
+      <div class="card h-100 shadow-sm">
+        {%- if post.image %}
+        <a href="{{ post.url | relative_url }}">
+          <img src="{{ post.image | relative_url }}" class="card-img-top" alt="{{ post.title }}">
+        </a>
+        {%- endif %}
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">
+            <a href="{{ post.url | relative_url }}" class="text-decoration-none text-dark">
+              {{ post.title }}
+            </a>
+          </h5>
+          <p class="card-text text-muted mb-2">
+            {{ post.date | date: date_format }}
+          </p>
+          {%- if post.description %}
+          <p class="card-text">{{ post.description | truncate: 120 }}</p>
+          {%- elsif post.excerpt %}
+          <p class="card-text">{{ post.excerpt | strip_html | truncate: 120 }}</p>
+          {%- endif %}
+          <div class="mt-auto">
+            <a href="{{ post.url | relative_url }}" class="btn btn-primary btn-lg w-100 mt-4">Leggi</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {%- endfor -%}
+  </div>
+  <nav class="d-flex justify-content-center mt-5">
+    <ul class="pagination">
+      {% if paginator.previous_page %}
+        <li class="page-item">
+          <a class="page-link" href="{{ paginator.previous_page_path | relative_url }}">&laquo; Indietro</a>
+        </li>
+      {% else %}
+        <li class="page-item disabled">
+          <span class="page-link">&laquo; Indietro</span>
+        </li>
+      {% endif %}
+
+      {% for page in (1..paginator.total_pages) %}
+        <li class="page-item {% if page == paginator.page %}active{% endif %}">
+          <a class="page-link" href="{{ paginator.paginate_path | replace: ':num', page | relative_url }}">
+            {{ page }}
+          </a>
+        </li>
+      {% endfor %}
+
+      {% if paginator.next_page %}
+        <li class="page-item">
+          <a class="page-link" href="{{ paginator.next_page_path | relative_url }}">Avanti &raquo;</a>
+        </li>
+      {% else %}
+        <li class="page-item disabled">
+          <span class="page-link">Avanti &raquo;</span>
+        </li>
+      {% endif %}
+    </ul>
+  </nav>
+</div>

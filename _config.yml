@@ -1,0 +1,130 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you:
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+title: "Audely"
+description: "Receptionist AI"
+baseurl: ""
+url: "https://audely.github.io"
+
+author:
+  name: "Audely"
+  email: "info@audely.github.io"
+  bio: "Receptionist AI"
+
+
+# la immagine di anteprima link per i social media
+og_image: "og-image/default-og-image.jpg"
+
+collections:
+  portfolio:
+    output: true
+    permalink: "/portfolio/:title/"
+#  mostre:
+#    output: true
+#    permalink: "/mostre/:title/"
+
+paginate: 20  # numero di post per pagina
+paginate_path: "/blog/page:num"
+
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-paginate
+
+navigation:
+  - title: "Home"
+    url: "/"
+#  - title: "Blog"
+#    url: "/blog/"
+#  - title: "Portfolio"
+#    url: "/portfolio/"
+#  - title: "Mostre"
+#    url: "/mostre/"
+#  - title: "Biografia"
+#    url: "/biografia/"
+  - title: "Contatti"
+    url: "https://forms.gle/"
+
+faq:
+  - question: "Quali servizi offre Audely in ambito integrazione sistemi?"
+    answer: "Audely si integra con ERP, CRM, database e servizi cloud, garantendo flussi dati sincronizzati e automazione vocale dei processi per un’infrastruttura IT efficiente e senza interruzioni."
+  - question: "Posso avere un’assistente vocale personalizzato per il mio business?"
+    answer: "Audely può essere personalizzato per rispondere alle esigenze specifiche del tuo business, con flussi conversazionali su misura e integrazioni dedicate per automatizzare chiamate, appuntamenti e supporto clienti."
+  - question: "Audely supporta l’automazione dei workflow vocali?"
+    answer: "Sì, Audely automatizza flussi di chiamata e interazioni vocali, integrandosi con sistemi esterni per ridurre attività ripetitive, gestire notifiche e ottimizzare l’interazione con i clienti."
+  - question: "Come può Audely migliorare i miei processi con automazioni?"
+    answer: "Audely usa una combinazione di AI conversazionale e integrazioni API per orchestrare processi vocali personalizzati, riducendo tempi e errori manuali, con un deployment semplice e scalabile."
+  - question: "Audely utilizza tecnologie container per il deployment?"
+    answer: "Sì, Audely sfrutta Docker per isolare e scalare i suoi componenti, assicurando facilità di aggiornamento, manutenzione e distribuzione su qualsiasi infrastruttura cloud o on-premise."
+  - question: "Audely integra modelli di intelligenza artificiale?"
+    answer: "Audely incorpora modelli AI avanzati per comprensione del linguaggio naturale, riconoscimento intenti e gestione dinamica della conversazione, garantendo risposte pertinenti e contestualizzate."
+  - question: "Come posso integrare Audely con il mio CRM o database?"
+    answer: "Audely si collega facilmente a CRM, database e altri sistemi tramite API e pipeline personalizzate, consentendo un flusso dati continuo e aggiornamenti in tempo reale durante le conversazioni."
+  - question: "Cos’è il backend flessibile di Audely e perché è importante?"
+    answer: "Il backend di Audely è progettato per essere modulare e configurabile, permettendo di adattare il sistema a molteplici casi d’uso, dall’agenda appuntamenti al call center AI, senza interventi complessi."
+  - question: "Come viene gestita la sicurezza dei dati in Audely?"
+    answer: "Audely implementa protocolli di sicurezza avanzati, crittografia end-to-end e policy di accesso controllato per proteggere tutte le informazioni scambiate durante le interazioni vocali."
+  - question: "Come posso richiedere una demo o una consulenza su Audely?"
+    answer: "Contattaci tramite il form <a href=\"/contatti\" class=\"text-black\">qui</a> o scrivi a <strong>info@audely.it</strong> per programmare una demo gratuita e valutare insieme la soluzione più adatta al tuo business."
+
+social:
+  instagram: "https://www.instagram.com/audely"
+  facebook: "https://www.facebook.com/audely"
+  twitter: "https://twitter.com/audely"
+  linkedin: "https://www.linkedin.com/in/audely"
+
+permalink: "/:categories/:title/"
+markdown: kramdown
+highlighter: rouge
+
+include:
+  - assets
+
+keywords:
+  - automazione
+  - AI conversazionale
+  - integrazione sistemi
+  - workflow vocali
+  - AI
+  - agentic app
+  - workflow
+  - integrazione sistemi
+  - intelligenza artificiale
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

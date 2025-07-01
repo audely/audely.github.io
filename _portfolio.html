@@ -1,0 +1,48 @@
+---
+layout: default
+title: Audely - Portfolio
+description: "Scopri i progetti e le soluzioni realizzate: integrazione sistemi, app personalizzate, automazioni e AI."
+permalink: /portfolio/
+---
+
+<div class="hero-100hv position-relative d-flex flex-column justify-content-end">
+  <picture>
+    <source srcset="/assets/images/index/hero-bg-antonio-trento-mobile.jpg" media="(max-width: 768px)">
+    <img src="/assets/images/index/hero-bg-antonio-trento.jpg" class="hero-bg img-fluid" alt="Sfondo Audely">
+  </picture>
+  <div class="hero-overlay-white"></div>
+  <div class="container col-xxl-8 py-5 position-relative">
+    <div class="row justify-content-center py-5">
+      <div class="col-12 col-md-8 text-center">
+        <h1 class="display-5 fw-bold mb-3">Portfolio</h1>
+        <p class="lead">Una selezione dei miei progetti: integrazione sistemi, automazioni, app su misura e soluzioni AI.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container py-5">
+  <div class="row g-4">
+    {% for item in site.portfolio %}
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card h-100 shadow-sm">
+          <a href="{{ item.url }}">
+            <img src="{{ item.image }}" class="card-img-top" alt="{{ item.title }}">
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">{{ item.title }}</h5>
+            {% if item.subtitle %}<p class="card-text">{{ item.subtitle }}</p>{% endif %}
+            <a href="{{ item.url }}" class="btn btn-outline-primary btn-sm">Dettagli</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% include about.html %}
+
+<div class="container py-5">
+  <h2 class="display-5 fw-bold mb-4">Domande frequenti</h2>
+  {% include accordion-faq.html %}
+</div>
