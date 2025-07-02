@@ -72,7 +72,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("iconFloatingBackground");
   if (!container) return;
 
-  // Font Awesome icon classes + color
   const icons = [
     { class: "fas fa-phone", color: "#1DA1F2" },
     { class: "fas fa-bell", color: "#FF6B6B" },
@@ -109,17 +108,10 @@ document.addEventListener("DOMContentLoaded", () => {
     container.appendChild(iEl);
   }
 
-  // Movimento parallax al mouse
-  const section = container.parentElement;
-  section.addEventListener("mousemove", e => {
-    const x = (e.clientX / window.innerWidth - 0.5) * 30;
-    const y = (e.clientY / window.innerHeight - 0.5) * 30;
-    const maxShift = 5; // massimo spostamento in px, meno invasivo
-    container.style.transform = `translate(${x * maxShift}px, ${y * maxShift}px)`;
-
-  });
+  // 🔴 Rimosso il parallax mousemove perché causava il bug
 });
 </script>
+
 
 
 <!-- VIDEO DEMO SECTION -->
