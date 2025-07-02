@@ -83,7 +83,7 @@ faq:
   - question: "Come viene gestita la sicurezza dei dati in Audely?"
     answer: "Audely implementa protocolli di sicurezza avanzati, crittografia end-to-end e policy di accesso controllato per proteggere tutte le informazioni scambiate durante le interazioni vocali."
   - question: "Come posso richiedere una demo o una consulenza su Audely?"
-    answer: "Contattaci tramite il form <a href=\"/contatti\" class=\"text-black\">qui</a> o scrivi a <strong>info@audely.it</strong> per programmare una demo gratuita e valutare insieme la soluzione più adatta al tuo business."
+    answer: "Contattaci tramite il form <a href=\"https://forms.gle/sHu3vGUkzZtjp3xdA\" class=\"text-black\">qui</a> o scrivi a <strong>info@audely.it</strong> per programmare una demo gratuita e valutare insieme la soluzione più adatta al tuo business."
 
 social:
   instagram: "https://www.instagram.com/audely"
