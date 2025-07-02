@@ -67,65 +67,65 @@ css: /assets/css/custom-index.css
 </section>
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
   const container = document.getElementById("iconFloatingBackground");
   if (!container) return;
 
-  // SVG colorati (esempi simbolici, personalizzabili)
-  const svgs = [
-  `<svg viewBox="0 0 24 24" fill="#1E90FF" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79a15.466 15.466 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.21.49 2.53.76 3.89.76a1 1 0 011 1v3.5a1 1 0 01-1 1C10.07 21.75 2.25 13.93 2.25 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.36.27 2.68.76 3.89a1 1 0 01-.21 1.11l-2.18 2.2z"/></svg>`, // telefono
-
-  `<svg viewBox="0 0 24 24" fill="#FF8C00" xmlns="http://www.w3.org/2000/svg"><path d="M12 3a3 3 0 013 3v3a3 3 0 11-6 0V6a3 3 0 013-3zM19 10a1 1 0 110 2 5 5 0 01-10 0 1 1 0 110-2 7 7 0 0014 0zM12 22a7 7 0 007-7h-2a5 5 0 01-10 0H5a7 7 0 007 7z"/></svg>`, // microfono
-
-  `<svg viewBox="0 0 24 24" fill="#32CD32" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" fill="#32CD32" opacity="0.2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>`, // calendario
-
-  `<svg viewBox="0 0 24 24" fill="#FF6347" xmlns="http://www.w3.org/2000/svg"><path d="M12 15.5a3.5 3.5 0 110-7 3.5 3.5 0 010 7z"/><path d="M19.43 12.98l1.77-1.03a.5.5 0 00.09-.82l-1.5-1.5a.5.5 0 00-.82.09l-1.03 1.77a7.992 7.992 0 00-2.33-.83l-.35-2.1a.5.5 0 00-.5-.44h-2a.5.5 0 00-.5.44l-.35 2.1a7.994 7.994 0 00-2.33.83L5.03 9.72a.5.5 0 00-.82-.09l-1.5 1.5a.5.5 0 00.09.82l1.77 1.03a8.015 8.015 0 000 2.04l-1.77 1.03a.5.5 0 00-.09.82l1.5 1.5a.5.5 0 00.82-.09l1.03-1.77a7.99 7.99 0 002.33.83l.35 2.1a.5.5 0 00.5.44h2a.5.5 0 00.5-.44l.35-2.1a7.992 7.992 0 002.33-.83l1.03 1.77a.5.5 0 00.82.09l1.5-1.5a.5.5 0 00-.09-.82l-1.77-1.03a7.99 7.99 0 000-2.04z"/></svg>`, // ingranaggio (cog)
-
-  `<svg viewBox="0 0 24 24" fill="#00CED1" xmlns="http://www.w3.org/2000/svg"><path d="M19 10c0-1.1-.9-2-2-2H7a2 2 0 00-2 2v6c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2v-6z"/><path d="M7 6h10v2H7z"/></svg>`, // nuvola (cloud)
-
-  `<svg viewBox="0 0 24 24" fill="#FF69B4" xmlns="http://www.w3.org/2000/svg"><path d="M20 2H4a2 2 0 00-2 2v14l4-4h14a2 2 0 002-2V4a2 2 0 00-2-2z"/></svg>`, // messaggio/chat
-
-  `<svg viewBox="0 0 24 24" fill="#8A2BE2" xmlns="http://www.w3.org/2000/svg"><path d="M12 8v5h4"/></svg>`, // orologio stilizzato
-
-  `<svg viewBox="0 0 24 24" fill="#FF4500" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" opacity="0.15"/><path d="M8 17l8-5-8-5v10z"/></svg>` // robot stilizzato (play button stilizzato per simbolo AI)
+  // Icone e i rispettivi colori scelti
+  const icons = [
+    { path: "/assets/images/iconmonstr-phone-10.svg", color: "#1E90FF" },       // blu telefono
+    { path: "/assets/images/iconmonstr-microphone-3.svg", color: "#FF8C00" },  // arancio microfono
+    { path: "/assets/images/iconmonstr-calendar-1.svg", color: "#32CD32" },    // verde calendario
+    { path: "/assets/images/iconmonstr-gear-2.svg", color: "#FF6347" },        // rosso ingranaggio
+    { path: "/assets/images/iconmonstr-cloud-24.svg", color: "#00CED1" },      // turchese cloud
+    { path: "/assets/images/plus-svgrepo-com.svg", color: "#FF69B4" },         // rosa più
   ];
 
-  const iconCount = 45;
+  const iconCount = 30; // meno icone, più leggibilità
+
+  // Dimensioni e griglia
+  const cols = 10;
+  const rows = 5;
+  const cellWidth = 100 / cols;
+  const cellHeight = 100 / rows;
 
   for (let i = 0; i < iconCount; i++) {
-    const div = document.createElement("div");
-    div.innerHTML = svgs[i % svgs.length];
-    const svg = div.firstChild;
+    const { path, color } = icons[i % icons.length];
+    const col = i % cols;
+    const row = Math.floor(i / cols);
 
-    // dimensioni 30px - 60px
-    const size = 30 + Math.random() * 30;
-    svg.style.width = size + "px";
-    svg.style.height = size + "px";
+    // Posizione con un offset random per naturalezza
+    const left = col * cellWidth + (Math.random() * 0.2 - 0.1) * cellWidth;
+    const top = row * cellHeight + (Math.random() * 0.2 - 0.1) * cellHeight;
 
-    // posizione % tra 5% e 95%
-    svg.style.top = `${5 + Math.random() * 90}%`;
-    svg.style.left = `${5 + Math.random() * 90}%`;
+    // Fetch SVG file, parse e modifica il fill
+    const response = await fetch(path);
+    let svgText = await response.text();
 
-    svg.style.position = "absolute";
+    // Modifica colore fill in tutte le occorrenze (semplice regex)
+    svgText = svgText.replace(/fill="[^"]*"/g, `fill="${color}"`);
 
-    // opacità 0.1 - 0.25
-    svg.style.opacity = (0.1 + Math.random() * 0.15).toFixed(2);
+    // Crea wrapper div per posizionare e animare
+    const wrapper = document.createElement("div");
+    wrapper.style.position = "absolute";
+    wrapper.style.top = `${top}%`;
+    wrapper.style.left = `${left}%`;
+    wrapper.style.width = "40px";
+    wrapper.style.height = "40px";
+    wrapper.style.opacity = "0.25";
+    wrapper.style.animation = `float ${5 + Math.random() * 5}s ease-in-out infinite`;
+    wrapper.style.animationDelay = `${Math.random() * 5}s`;
+    wrapper.innerHTML = svgText;
 
-    // animazione alternata float-up-down e float-left-right, durata 3-7s, delay casuale
-    const anim = Math.random() < 0.5 ? "float-up-down" : "float-left-right";
-    const duration = 3000 + Math.random() * 4000;
-    svg.style.animation = `${anim} ${duration}ms ease-in-out infinite`;
-    svg.style.animationDelay = `${Math.random() * duration}ms`;
-
-    container.appendChild(svg);
+    container.appendChild(wrapper);
   }
 
-  // Parallax mouse, max 30px movimento per maggior carattere
-  const section = container.parentElement;
-  section.addEventListener("mousemove", e => {
-    const x = (e.clientX / window.innerWidth - 0.5) * 30;
-    const y = (e.clientY / window.innerHeight - 0.5) * 30;
-    container.style.transform = `translate(${x}px, ${y}px)`;
+  // Movimento leggero al mouse
+  const section = document.querySelector(".hero-icons-section");
+  section.addEventListener("mousemove", (e) => {
+    const x = e.clientX / window.innerWidth - 0.5;
+    const y = e.clientY / window.innerHeight - 0.5;
+    container.style.transform = `translate(${x * 15}px, ${y * 15}px)`;
   });
 });
 </script>
