@@ -18,7 +18,7 @@ css: /assets/css/custom-index.css
   section { padding-top: 4rem; padding-bottom: 4rem; }
   .video-container { max-width: 720px; margin-left:auto; margin-right:auto; margin-bottom: 3rem; }
 
-    .hero-100hv {
+  .hero-100hv {
     position: relative;
     overflow: hidden;
   }
@@ -33,22 +33,23 @@ css: /assets/css/custom-index.css
 
   .icon-floating-background svg {
     position: absolute;
-    fill: #111; /* colore icone testo scuro */
-    opacity: 0.1;
     width: 40px;
     height: 40px;
+    opacity: 0.15;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
+    user-select: none;
+    will-change: transform;
   }
 
   @keyframes float-up-down {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
+    50% { transform: translateY(-20px); }
   }
 
   @keyframes float-left-right {
     0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(15px); }
+    50% { transform: translateX(20px); }
   }
 </style>
 
@@ -70,50 +71,50 @@ document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("iconFloatingBackground");
   if (!container) return;
 
-  // SVG icons inline, pochi e coerenti con il servizio Audely
+  // SVG colorati (esempi simbolici, personalizzabili)
   const svgs = [
-    `<svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.466 15.466 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.21.49 2.53.76 3.89.76a1 1 0 011 1v3.5a1 1 0 01-1 1C10.07 21.75 2.25 13.93 2.25 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.36.27 2.68.76 3.89a1 1 0 01-.21 1.11l-2.18 2.2z"/></svg>`, // phone
-    `<svg viewBox="0 0 24 24"><path d="M12 22a10 10 0 110-20 10 10 0 010 20zM11 6h2v6h-2V6zm0 8h2v2h-2v-2z"/></svg>`, // alert circle
-    `<svg viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zM12 3a1 1 0 011 1v1h-2V4a1 1 0 011-1zm7 16H5V5h2v2h10V5h2v14z"/></svg>`, // calendar
-    `<svg viewBox="0 0 24 24"><path d="M12 4a1 1 0 011 1v6h6a1 1 0 110 2h-6v6a1 1 0 11-2 0v-6H5a1 1 0 110-2h6V5a1 1 0 011-1z"/></svg>`, // plus sign (azione)
-    `<svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm-2 12h-4v-2h4v2zm0-4h-4V8h4v4z"/></svg>` // message bubble
+    `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#1DA1F2" d="M6.62 10.79a15.466 15.466 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.21.49 2.53.76 3.89.76a1 1 0 011 1v3.5a1 1 0 01-1 1C10.07 21.75 2.25 13.93 2.25 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.36.27 2.68.76 3.89a1 1 0 01-.21 1.11l-2.18 2.2z"/></svg>`, // telefono blu
+    `<svg viewBox="0 0 24 24" fill="#FF6B6B" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" opacity="0.15"/><path d="M11 6h2v6h-2V6zm0 8h2v2h-2v-2z"/></svg>`, // alert rosso
+    `<svg viewBox="0 0 24 24" fill="#FFD93B" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="4" width="14" height="16" rx="2" ry="2" opacity="0.8"/><path d="M12 3a1 1 0 011 1v1h-2V4a1 1 0 011-1zm7 16H5V5h2v2h10V5h2v14z"/></svg>`, // calendario giallo
+    `<svg viewBox="0 0 24 24" fill="#4ECDC4" xmlns="http://www.w3.org/2000/svg"><path d="M12 4a1 1 0 011 1v6h6a1 1 0 110 2h-6v6a1 1 0 11-2 0v-6H5a1 1 0 110-2h6V5a1 1 0 011-1z"/></svg>`, // plus verde acqua
+    `<svg viewBox="0 0 24 24" fill="#556270" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="4" width="16" height="16" rx="2" ry="2" opacity="0.15"/><path d="M18 16h-4v-2h4v2zm0-4h-4V8h4v4z"/></svg>` // fumetto grigio
   ];
 
-  const iconCount = 40;
+  const iconCount = 45;
 
   for (let i = 0; i < iconCount; i++) {
     const div = document.createElement("div");
     div.innerHTML = svgs[i % svgs.length];
     const svg = div.firstChild;
 
-    // dimensione random tra 25 e 45 px
-    const size = 25 + Math.random() * 20;
+    // dimensioni 30px - 60px
+    const size = 30 + Math.random() * 30;
     svg.style.width = size + "px";
     svg.style.height = size + "px";
 
-    // posizione casuale in % (10% - 90%)
-    svg.style.top = `${10 + Math.random() * 80}%`;
-    svg.style.left = `${10 + Math.random() * 80}%`;
+    // posizione % tra 5% e 95%
+    svg.style.top = `${5 + Math.random() * 90}%`;
+    svg.style.left = `${5 + Math.random() * 90}%`;
 
     svg.style.position = "absolute";
 
-    // opacità variabile tra 0.05 e 0.15
-    svg.style.opacity = (0.05 + Math.random() * 0.1).toFixed(2);
+    // opacità 0.1 - 0.25
+    svg.style.opacity = (0.1 + Math.random() * 0.15).toFixed(2);
 
-    // animazione random tra float-up-down e float-left-right con durata random
+    // animazione alternata float-up-down e float-left-right, durata 3-7s, delay casuale
     const anim = Math.random() < 0.5 ? "float-up-down" : "float-left-right";
-    const duration = 4000 + Math.random() * 4000; // 4-8s
+    const duration = 3000 + Math.random() * 4000;
     svg.style.animation = `${anim} ${duration}ms ease-in-out infinite`;
     svg.style.animationDelay = `${Math.random() * duration}ms`;
 
     container.appendChild(svg);
   }
 
-  // Movimento parallax delicato al mouse
+  // Parallax mouse, max 30px movimento per maggior carattere
   const section = container.parentElement;
   section.addEventListener("mousemove", e => {
-    const x = (e.clientX / window.innerWidth - 0.5) * 20; // max 20px movimento
-    const y = (e.clientY / window.innerHeight - 0.5) * 20;
+    const x = (e.clientX / window.innerWidth - 0.5) * 30;
+    const y = (e.clientY / window.innerHeight - 0.5) * 30;
     container.style.transform = `translate(${x}px, ${y}px)`;
   });
 });

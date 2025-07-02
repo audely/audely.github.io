@@ -23,13 +23,14 @@ css: /assets/css/custom-index.css
     overflow: hidden;
   }
 
-  .icon-floating-background {
+  .icon-floating-background i {
     position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    pointer-events: none;
-    z-index: 0;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    user-select: none;
+    will-change: transform;
   }
+
 
   .icon-floating-background svg {
     position: absolute;
@@ -71,46 +72,44 @@ document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("iconFloatingBackground");
   if (!container) return;
 
-  // SVG colorati (esempi simbolici, personalizzabili)
-  const svgs = [
-    `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#1DA1F2" d="M6.62 10.79a15.466 15.466 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.21.49 2.53.76 3.89.76a1 1 0 011 1v3.5a1 1 0 01-1 1C10.07 21.75 2.25 13.93 2.25 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.36.27 2.68.76 3.89a1 1 0 01-.21 1.11l-2.18 2.2z"/></svg>`, // telefono blu
-    `<svg viewBox="0 0 24 24" fill="#FF6B6B" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" opacity="0.15"/><path d="M11 6h2v6h-2V6zm0 8h2v2h-2v-2z"/></svg>`, // alert rosso
-    `<svg viewBox="0 0 24 24" fill="#FFD93B" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="4" width="14" height="16" rx="2" ry="2" opacity="0.8"/><path d="M12 3a1 1 0 011 1v1h-2V4a1 1 0 011-1zm7 16H5V5h2v2h10V5h2v14z"/></svg>`, // calendario giallo
-    `<svg viewBox="0 0 24 24" fill="#4ECDC4" xmlns="http://www.w3.org/2000/svg"><path d="M12 4a1 1 0 011 1v6h6a1 1 0 110 2h-6v6a1 1 0 11-2 0v-6H5a1 1 0 110-2h6V5a1 1 0 011-1z"/></svg>`, // plus verde acqua
-    `<svg viewBox="0 0 24 24" fill="#556270" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="4" width="16" height="16" rx="2" ry="2" opacity="0.15"/><path d="M18 16h-4v-2h4v2zm0-4h-4V8h4v4z"/></svg>` // fumetto grigio
+  // Font Awesome icon classes + color
+  const icons = [
+    { class: "fas fa-phone", color: "#1DA1F2" },
+    { class: "fas fa-bell", color: "#FF6B6B" },
+    { class: "fas fa-calendar-alt", color: "#FFD93B" },
+    { class: "fas fa-robot", color: "#4ECDC4" },
+    { class: "fas fa-comment-dots", color: "#556270" },
+    { class: "fas fa-bolt", color: "#FF9F1C" },
+    { class: "fas fa-headset", color: "#6A4C93" }
   ];
 
   const iconCount = 45;
 
   for (let i = 0; i < iconCount; i++) {
-    const div = document.createElement("div");
-    div.innerHTML = svgs[i % svgs.length];
-    const svg = div.firstChild;
+    const iconData = icons[i % icons.length];
+    const iEl = document.createElement("i");
 
-    // dimensioni 30px - 60px
+    iEl.className = iconData.class;
+    iEl.style.color = iconData.color;
+
     const size = 30 + Math.random() * 30;
-    svg.style.width = size + "px";
-    svg.style.height = size + "px";
+    iEl.style.fontSize = `${size}px`;
+    iEl.style.position = "absolute";
 
-    // posizione % tra 5% e 95%
-    svg.style.top = `${5 + Math.random() * 90}%`;
-    svg.style.left = `${5 + Math.random() * 90}%`;
+    iEl.style.top = `${5 + Math.random() * 90}%`;
+    iEl.style.left = `${5 + Math.random() * 90}%`;
 
-    svg.style.position = "absolute";
+    iEl.style.opacity = (0.1 + Math.random() * 0.15).toFixed(2);
 
-    // opacità 0.1 - 0.25
-    svg.style.opacity = (0.1 + Math.random() * 0.15).toFixed(2);
-
-    // animazione alternata float-up-down e float-left-right, durata 3-7s, delay casuale
     const anim = Math.random() < 0.5 ? "float-up-down" : "float-left-right";
     const duration = 3000 + Math.random() * 4000;
-    svg.style.animation = `${anim} ${duration}ms ease-in-out infinite`;
-    svg.style.animationDelay = `${Math.random() * duration}ms`;
+    iEl.style.animation = `${anim} ${duration}ms ease-in-out infinite`;
+    iEl.style.animationDelay = `${Math.random() * duration}ms`;
 
-    container.appendChild(svg);
+    container.appendChild(iEl);
   }
 
-  // Parallax mouse, max 30px movimento per maggior carattere
+  // Movimento parallax al mouse
   const section = container.parentElement;
   section.addEventListener("mousemove", e => {
     const x = (e.clientX / window.innerWidth - 0.5) * 30;
@@ -119,6 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 </script>
+
 
 <!-- VIDEO DEMO SECTION -->
 <section class="bg-white py-5">
