@@ -73,11 +73,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // SVG colorati (esempi simbolici, personalizzabili)
   const svgs = [
-    `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#1DA1F2" d="M6.62 10.79a15.466 15.466 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.21.49 2.53.76 3.89.76a1 1 0 011 1v3.5a1 1 0 01-1 1C10.07 21.75 2.25 13.93 2.25 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.36.27 2.68.76 3.89a1 1 0 01-.21 1.11l-2.18 2.2z"/></svg>`, // telefono blu
-    `<svg viewBox="0 0 24 24" fill="#FF6B6B" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" opacity="0.15"/><path d="M11 6h2v6h-2V6zm0 8h2v2h-2v-2z"/></svg>`, // alert rosso
-    `<svg viewBox="0 0 24 24" fill="#FFD93B" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="4" width="14" height="16" rx="2" ry="2" opacity="0.8"/><path d="M12 3a1 1 0 011 1v1h-2V4a1 1 0 011-1zm7 16H5V5h2v2h10V5h2v14z"/></svg>`, // calendario giallo
-    `<svg viewBox="0 0 24 24" fill="#4ECDC4" xmlns="http://www.w3.org/2000/svg"><path d="M12 4a1 1 0 011 1v6h6a1 1 0 110 2h-6v6a1 1 0 11-2 0v-6H5a1 1 0 110-2h6V5a1 1 0 011-1z"/></svg>`, // plus verde acqua
-    `<svg viewBox="0 0 24 24" fill="#556270" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="4" width="16" height="16" rx="2" ry="2" opacity="0.15"/><path d="M18 16h-4v-2h4v2zm0-4h-4V8h4v4z"/></svg>` // fumetto grigio
+  `<svg viewBox="0 0 24 24" fill="#1E90FF" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79a15.466 15.466 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.21.49 2.53.76 3.89.76a1 1 0 011 1v3.5a1 1 0 01-1 1C10.07 21.75 2.25 13.93 2.25 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.36.27 2.68.76 3.89a1 1 0 01-.21 1.11l-2.18 2.2z"/></svg>`, // telefono
+
+  `<svg viewBox="0 0 24 24" fill="#FF8C00" xmlns="http://www.w3.org/2000/svg"><path d="M12 3a3 3 0 013 3v3a3 3 0 11-6 0V6a3 3 0 013-3zM19 10a1 1 0 110 2 5 5 0 01-10 0 1 1 0 110-2 7 7 0 0014 0zM12 22a7 7 0 007-7h-2a5 5 0 01-10 0H5a7 7 0 007 7z"/></svg>`, // microfono
+
+  `<svg viewBox="0 0 24 24" fill="#32CD32" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" fill="#32CD32" opacity="0.2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>`, // calendario
+
+  `<svg viewBox="0 0 24 24" fill="#FF6347" xmlns="http://www.w3.org/2000/svg"><path d="M12 15.5a3.5 3.5 0 110-7 3.5 3.5 0 010 7z"/><path d="M19.43 12.98l1.77-1.03a.5.5 0 00.09-.82l-1.5-1.5a.5.5 0 00-.82.09l-1.03 1.77a7.992 7.992 0 00-2.33-.83l-.35-2.1a.5.5 0 00-.5-.44h-2a.5.5 0 00-.5.44l-.35 2.1a7.994 7.994 0 00-2.33.83L5.03 9.72a.5.5 0 00-.82-.09l-1.5 1.5a.5.5 0 00.09.82l1.77 1.03a8.015 8.015 0 000 2.04l-1.77 1.03a.5.5 0 00-.09.82l1.5 1.5a.5.5 0 00.82-.09l1.03-1.77a7.99 7.99 0 002.33.83l.35 2.1a.5.5 0 00.5.44h2a.5.5 0 00.5-.44l.35-2.1a7.992 7.992 0 002.33-.83l1.03 1.77a.5.5 0 00.82.09l1.5-1.5a.5.5 0 00-.09-.82l-1.77-1.03a7.99 7.99 0 000-2.04z"/></svg>`, // ingranaggio (cog)
+
+  `<svg viewBox="0 0 24 24" fill="#00CED1" xmlns="http://www.w3.org/2000/svg"><path d="M19 10c0-1.1-.9-2-2-2H7a2 2 0 00-2 2v6c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2v-6z"/><path d="M7 6h10v2H7z"/></svg>`, // nuvola (cloud)
+
+  `<svg viewBox="0 0 24 24" fill="#FF69B4" xmlns="http://www.w3.org/2000/svg"><path d="M20 2H4a2 2 0 00-2 2v14l4-4h14a2 2 0 002-2V4a2 2 0 00-2-2z"/></svg>`, // messaggio/chat
+
+  `<svg viewBox="0 0 24 24" fill="#8A2BE2" xmlns="http://www.w3.org/2000/svg"><path d="M12 8v5h4"/></svg>`, // orologio stilizzato
+
+  `<svg viewBox="0 0 24 24" fill="#FF4500" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" opacity="0.15"/><path d="M8 17l8-5-8-5v10z"/></svg>` // robot stilizzato (play button stilizzato per simbolo AI)
   ];
 
   const iconCount = 45;
