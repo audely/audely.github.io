@@ -5,6 +5,7 @@ description: Diventa investitore o socio operativo di Audely, l’assistente voc
 css: /assets/css/custom-index.css
 ---
 <style>
+  .hero-100hv { height: 100vh; }
   .hero-overlay-white { background: rgba(255,255,255,0.85); position: absolute; top:0; left:0; width:100%; height:100%; }
   .btn-primary { background-color: #0056b3; border-color: #0056b3; }
   .btn-primary:hover { background-color: #004494; border-color: #004494; }
@@ -17,145 +18,103 @@ css: /assets/css/custom-index.css
   section { padding-top: 4rem; padding-bottom: 4rem; }
   .video-container { max-width: 720px; margin-left:auto; margin-right:auto; margin-bottom: 3rem; }
 
-  .hero-100vh {
-    height: 100vh;
+  .hero-100hv {
     position: relative;
     overflow: hidden;
-    background: #f8f9fa;
-  }
-
-  .hero-overlay-white {
-    background: rgba(255, 255, 255, 0.85);
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    z-index: 0;
-    pointer-events: none;
   }
 
   .icon-floating-background {
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    z-index: 0;
     pointer-events: none;
+    z-index: 0;
   }
 
-  .icon-floating-background i {
+  .icon-floating-background svg {
     position: absolute;
-    color: #111;
-    opacity: 0.1;
+    width: 40px;
+    height: 40px;
+    opacity: 0.15;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
+    user-select: none;
+    will-change: transform;
   }
 
   @keyframes float-up-down {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
+    50% { transform: translateY(-20px); }
   }
 
   @keyframes float-left-right {
     0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(15px); }
-  }
-
-  @keyframes float-zoom {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.2); }
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 1;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 4rem 2rem;
-  }
-
-  .hero-content h1 {
-    font-size: 2.5rem;
-    color: #003366;
-  }
-
-  .hero-content p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-  }
-
-  .btn-primary {
-    background-color: #0056b3;
-    border: none;
-    padding: 0.75rem 2rem;
-    font-size: 1.1rem;
-    color: white;
-    margin-top: 1.5rem;
-    text-decoration: none;
-    display: inline-block;
-    border-radius: 0.3rem;
-  }
-
-  .btn-primary:hover {
-    background-color: #004494;
+    50% { transform: translateX(20px); }
   }
 </style>
 
 <!-- HERO SECTION -->
-<section class="hero-100vh">
+<section class="hero-100hv d-flex flex-column justify-content-center text-center bg-light">
   <div class="icon-floating-background" id="iconFloatingBackground"></div>
-  <div class="hero-overlay-white"></div>
-  <div class="hero-content">
-    <h1>Audely – Il Futuro dell’Automazione Vocale AI per le Aziende</h1>
-    <p>
-      Audely è una piattaforma avanzata che trasforma il modo di gestire le chiamate aziendali, automatizzando la presa appuntamenti e la comunicazione con i clienti tramite intelligenza artificiale.
+  <div class="container container-max800 position-relative" style="z-index:1;">
+    <h1 class="display-3 fw-bold mb-4">Audely – Il Futuro dell’Automazione Vocale AI per le Aziende</h1>
+    <p class="lead mb-4">
+      Audely è una piattaforma avanzata che trasforma il modo di gestire le chiamate aziendali, automatizzando la presa appuntamenti e la comunicazione con i clienti tramite intelligenza artificiale.  
+      Il sistema si integra perfettamente con Google Calendar e CRM, offrendo un’assistenza 24/7 efficiente, economica e scalabile.
     </p>
-    <a href="#contatti" class="btn-primary">Scopri i vantaggi</a>
+    <a href="#contatti" class="btn btn-primary btn-lg px-5 mb-5" aria-label="Scopri i vantaggi di Audely">Scopri i vantaggi</a>
   </div>
 </section>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("iconFloatingBackground");
-  const icons = [
-    "fa-solid fa-phone", 
-    "fa-solid fa-calendar-days", 
-    "fa-solid fa-comment-dots", 
-    "fa-solid fa-robot", 
-    "fa-solid fa-bolt", 
-    "fa-solid fa-bell", 
-    "fa-solid fa-headset"
+  if (!container) return;
+
+  // SVG colorati (esempi simbolici, personalizzabili)
+  const svgs = [
+    `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#1DA1F2" d="M6.62 10.79a15.466 15.466 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.21.49 2.53.76 3.89.76a1 1 0 011 1v3.5a1 1 0 01-1 1C10.07 21.75 2.25 13.93 2.25 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.36.27 2.68.76 3.89a1 1 0 01-.21 1.11l-2.18 2.2z"/></svg>`, // telefono blu
+    `<svg viewBox="0 0 24 24" fill="#FF6B6B" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" opacity="0.15"/><path d="M11 6h2v6h-2V6zm0 8h2v2h-2v-2z"/></svg>`, // alert rosso
+    `<svg viewBox="0 0 24 24" fill="#FFD93B" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="4" width="14" height="16" rx="2" ry="2" opacity="0.8"/><path d="M12 3a1 1 0 011 1v1h-2V4a1 1 0 011-1zm7 16H5V5h2v2h10V5h2v14z"/></svg>`, // calendario giallo
+    `<svg viewBox="0 0 24 24" fill="#4ECDC4" xmlns="http://www.w3.org/2000/svg"><path d="M12 4a1 1 0 011 1v6h6a1 1 0 110 2h-6v6a1 1 0 11-2 0v-6H5a1 1 0 110-2h6V5a1 1 0 011-1z"/></svg>`, // plus verde acqua
+    `<svg viewBox="0 0 24 24" fill="#556270" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="4" width="16" height="16" rx="2" ry="2" opacity="0.15"/><path d="M18 16h-4v-2h4v2zm0-4h-4V8h4v4z"/></svg>` // fumetto grigio
   ];
 
-  const iconCount = 35;
+  const iconCount = 45;
 
   for (let i = 0; i < iconCount; i++) {
-    const icon = document.createElement("i");
-    icon.className = icons[i % icons.length];
+    const div = document.createElement("div");
+    div.innerHTML = svgs[i % svgs.length];
+    const svg = div.firstChild;
 
-    const size = 25 + Math.random() * 25;
-    icon.style.fontSize = size + "px";
+    // dimensioni 30px - 60px
+    const size = 30 + Math.random() * 30;
+    svg.style.width = size + "px";
+    svg.style.height = size + "px";
 
-    icon.style.top = `${5 + Math.random() * 90}%`;
-    icon.style.left = `${5 + Math.random() * 90}%`;
-    icon.style.opacity = (0.05 + Math.random() * 0.1).toFixed(2);
+    // posizione % tra 5% e 95%
+    svg.style.top = `${5 + Math.random() * 90}%`;
+    svg.style.left = `${5 + Math.random() * 90}%`;
 
-    // Animazione casuale
-    const anim = Math.random();
-    if (anim < 0.33) {
-      icon.style.animation = `float-up-down ${4000 + Math.random() * 4000}ms infinite`;
-    } else if (anim < 0.66) {
-      icon.style.animation = `float-left-right ${4000 + Math.random() * 4000}ms infinite`;
-    } else {
-      icon.style.animation = `float-zoom ${4000 + Math.random() * 4000}ms infinite`;
-    }
+    svg.style.position = "absolute";
 
-    container.appendChild(icon);
+    // opacità 0.1 - 0.25
+    svg.style.opacity = (0.1 + Math.random() * 0.15).toFixed(2);
+
+    // animazione alternata float-up-down e float-left-right, durata 3-7s, delay casuale
+    const anim = Math.random() < 0.5 ? "float-up-down" : "float-left-right";
+    const duration = 3000 + Math.random() * 4000;
+    svg.style.animation = `${anim} ${duration}ms ease-in-out infinite`;
+    svg.style.animationDelay = `${Math.random() * duration}ms`;
+
+    container.appendChild(svg);
   }
 
-  // Parallax effetto delicato
-  container.parentElement.addEventListener("mousemove", e => {
-    const x = (e.clientX / window.innerWidth - 0.5) * 20;
-    const y = (e.clientY / window.innerHeight - 0.5) * 20;
+  // Parallax mouse, max 30px movimento per maggior carattere
+  const section = container.parentElement;
+  section.addEventListener("mousemove", e => {
+    const x = (e.clientX / window.innerWidth - 0.5) * 30;
+    const y = (e.clientY / window.innerHeight - 0.5) * 30;
     container.style.transform = `translate(${x}px, ${y}px)`;
   });
 });
