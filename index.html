@@ -63,59 +63,16 @@ css: /assets/css/custom-index.css
       Audely è una piattaforma avanzata che trasforma il modo di gestire le chiamate aziendali, automatizzando la presa appuntamenti e la comunicazione con i clienti tramite intelligenza artificiale.  
       Il sistema si integra perfettamente con Google Calendar e CRM, offrendo un’assistenza 24/7 efficiente, economica e scalabile.
     </p>
-    <a href="#contatti" class="btn btn-primary btn-lg px-5 mb-5" aria-label="Scopri i vantaggi di Audely">Scopri i vantaggi</a>
+    <a href="#video" class="btn btn-primary btn-lg px-5 mb-5" aria-label="Scopri i vantaggi di Audely">Guarda il Video</a>
   </div>
 </section>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const container = document.getElementById("iconFloatingBackground");
-  if (!container) return;
 
-  const icons = [
-    { class: "fas fa-phone", color: "#1DA1F2" },
-    { class: "fas fa-bell", color: "#FF6B6B" },
-    { class: "fas fa-calendar-alt", color: "#FFD93B" },
-    { class: "fas fa-robot", color: "#4ECDC4" },
-    { class: "fas fa-comment-dots", color: "#556270" },
-    { class: "fas fa-bolt", color: "#FF9F1C" },
-    { class: "fas fa-headset", color: "#6A4C93" }
-  ];
-
-  const iconCount = 45;
-
-  for (let i = 0; i < iconCount; i++) {
-    const iconData = icons[i % icons.length];
-    const iEl = document.createElement("i");
-
-    iEl.className = iconData.class;
-    iEl.style.color = iconData.color;
-
-    const size = 30 + Math.random() * 30;
-    iEl.style.fontSize = `${size}px`;
-    iEl.style.position = "absolute";
-
-    iEl.style.top = `${5 + Math.random() * 90}%`;
-    iEl.style.left = `${5 + Math.random() * 90}%`;
-
-    iEl.style.opacity = (0.1 + Math.random() * 0.15).toFixed(2);
-
-    const anim = Math.random() < 0.5 ? "float-up-down" : "float-left-right";
-    const duration = 3000 + Math.random() * 4000;
-    iEl.style.animation = `${anim} ${duration}ms ease-in-out infinite`;
-    iEl.style.animationDelay = `${Math.random() * duration}ms`;
-
-    container.appendChild(iEl);
-  }
-
-  // 🔴 Rimosso il parallax mousemove perché causava il bug
-});
-</script>
 
 
 
 <!-- VIDEO DEMO SECTION -->
-<section class="bg-white py-5">
+<section id="video" class="bg-white py-5">
   <div class="container container-max800 text-center">
     <h2 class="fw-bold mb-4">Guarda Audely in Azione</h2>
     <div class="video-container ratio ratio-16x9 mx-auto shadow">
@@ -218,3 +175,48 @@ document.addEventListener("DOMContentLoaded", () => {
     <a href="mailto:info@audely.it" class="btn btn-outline-primary btn-lg px-5" aria-label="Contatta Audely via email">Compila il form di selezione</a>
   </div>
 </section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById("iconFloatingBackground");
+  if (!container) return;
+
+  const icons = [
+    { class: "fas fa-phone", color: "#1DA1F2" },
+    { class: "fas fa-bell", color: "#FF6B6B" },
+    { class: "fas fa-calendar-alt", color: "#FFD93B" },
+    { class: "fas fa-robot", color: "#4ECDC4" },
+    { class: "fas fa-comment-dots", color: "#556270" },
+    { class: "fas fa-bolt", color: "#FF9F1C" },
+    { class: "fas fa-headset", color: "#6A4C93" }
+  ];
+
+  const iconCount = 45;
+
+  for (let i = 0; i < iconCount; i++) {
+    const iconData = icons[i % icons.length];
+    const iEl = document.createElement("i");
+
+    iEl.className = iconData.class;
+    iEl.style.color = iconData.color;
+
+    const size = 30 + Math.random() * 30;
+    iEl.style.fontSize = `${size}px`;
+    iEl.style.position = "absolute";
+
+    iEl.style.top = `${5 + Math.random() * 90}%`;
+    iEl.style.left = `${5 + Math.random() * 90}%`;
+
+    iEl.style.opacity = (0.1 + Math.random() * 0.15).toFixed(2);
+
+    const anim = Math.random() < 0.5 ? "float-up-down" : "float-left-right";
+    const duration = 3000 + Math.random() * 4000;
+    iEl.style.animation = `${anim} ${duration}ms ease-in-out infinite`;
+    iEl.style.animationDelay = `${Math.random() * duration}ms`;
+
+    container.appendChild(iEl);
+  }
+
+  // 🔴 Rimosso il parallax mousemove perché causava il bug
+});
+</script>
