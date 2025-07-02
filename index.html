@@ -5,7 +5,6 @@ description: Diventa investitore o socio operativo di Audely, l’assistente voc
 css: /assets/css/custom-index.css
 ---
 <style>
-  .hero-100hv { height: 100vh; }
   .hero-overlay-white { background: rgba(255,255,255,0.85); position: absolute; top:0; left:0; width:100%; height:100%; }
   .btn-primary { background-color: #0056b3; border-color: #0056b3; }
   .btn-primary:hover { background-color: #004494; border-color: #004494; }
@@ -18,114 +17,146 @@ css: /assets/css/custom-index.css
   section { padding-top: 4rem; padding-bottom: 4rem; }
   .video-container { max-width: 720px; margin-left:auto; margin-right:auto; margin-bottom: 3rem; }
 
-  .hero-100hv {
+  .hero-100vh {
+    height: 100vh;
     position: relative;
     overflow: hidden;
+    background: #f8f9fa;
+  }
+
+  .hero-overlay-white {
+    background: rgba(255, 255, 255, 0.85);
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 0;
+    pointer-events: none;
   }
 
   .icon-floating-background {
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    pointer-events: none;
     z-index: 0;
+    pointer-events: none;
   }
 
-  .icon-floating-background svg {
+  .icon-floating-background i {
     position: absolute;
-    width: 40px;
-    height: 40px;
-    opacity: 0.15;
+    color: #111;
+    opacity: 0.1;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
-    user-select: none;
-    will-change: transform;
   }
 
   @keyframes float-up-down {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
+    50% { transform: translateY(-15px); }
   }
 
   @keyframes float-left-right {
     0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(20px); }
+    50% { transform: translateX(15px); }
+  }
+
+  @keyframes float-zoom {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 4rem 2rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+    color: #003366;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+
+  .btn-primary {
+    background-color: #0056b3;
+    border: none;
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+    color: white;
+    margin-top: 1.5rem;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 0.3rem;
+  }
+
+  .btn-primary:hover {
+    background-color: #004494;
   }
 </style>
 
 <!-- HERO SECTION -->
-<section class="hero-100hv d-flex flex-column justify-content-center text-center bg-light">
+<section class="hero-100vh">
   <div class="icon-floating-background" id="iconFloatingBackground"></div>
-  <div class="container container-max800 position-relative" style="z-index:1;">
-    <h1 class="display-3 fw-bold mb-4">Audely – Il Futuro dell’Automazione Vocale AI per le Aziende</h1>
-    <p class="lead mb-4">
-      Audely è una piattaforma avanzata che trasforma il modo di gestire le chiamate aziendali, automatizzando la presa appuntamenti e la comunicazione con i clienti tramite intelligenza artificiale.  
-      Il sistema si integra perfettamente con Google Calendar e CRM, offrendo un’assistenza 24/7 efficiente, economica e scalabile.
+  <div class="hero-overlay-white"></div>
+  <div class="hero-content">
+    <h1>Audely – Il Futuro dell’Automazione Vocale AI per le Aziende</h1>
+    <p>
+      Audely è una piattaforma avanzata che trasforma il modo di gestire le chiamate aziendali, automatizzando la presa appuntamenti e la comunicazione con i clienti tramite intelligenza artificiale.
     </p>
-    <a href="#contatti" class="btn btn-primary btn-lg px-5 mb-5" aria-label="Scopri i vantaggi di Audely">Scopri i vantaggi</a>
+    <a href="#contatti" class="btn-primary">Scopri i vantaggi</a>
   </div>
 </section>
 
 <script>
-document.addEventListener("DOMContentLoaded", async () => {
+document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("iconFloatingBackground");
-  if (!container) return;
-
-  // Icone e i rispettivi colori scelti
   const icons = [
-    { path: "/assets/images/iconmonstr-phone-10.svg", color: "#1E90FF" },       // blu telefono
-    { path: "/assets/images/iconmonstr-microphone-3.svg", color: "#FF8C00" },  // arancio microfono
-    { path: "/assets/images/iconmonstr-calendar-1.svg", color: "#32CD32" },    // verde calendario
-    { path: "/assets/images/iconmonstr-gear-2.svg", color: "#FF6347" },        // rosso ingranaggio
-    { path: "/assets/images/iconmonstr-cloud-24.svg", color: "#00CED1" },      // turchese cloud
-    { path: "/assets/images/plus-svgrepo-com.svg", color: "#FF69B4" },         // rosa più
+    "fa-solid fa-phone", 
+    "fa-solid fa-calendar-days", 
+    "fa-solid fa-comment-dots", 
+    "fa-solid fa-robot", 
+    "fa-solid fa-bolt", 
+    "fa-solid fa-bell", 
+    "fa-solid fa-headset"
   ];
 
-  const iconCount = 30; // meno icone, più leggibilità
-
-  // Dimensioni e griglia
-  const cols = 10;
-  const rows = 5;
-  const cellWidth = 100 / cols;
-  const cellHeight = 100 / rows;
+  const iconCount = 35;
 
   for (let i = 0; i < iconCount; i++) {
-    const { path, color } = icons[i % icons.length];
-    const col = i % cols;
-    const row = Math.floor(i / cols);
+    const icon = document.createElement("i");
+    icon.className = icons[i % icons.length];
 
-    // Posizione con un offset random per naturalezza
-    const left = col * cellWidth + (Math.random() * 0.2 - 0.1) * cellWidth;
-    const top = row * cellHeight + (Math.random() * 0.2 - 0.1) * cellHeight;
+    const size = 25 + Math.random() * 25;
+    icon.style.fontSize = size + "px";
 
-    // Fetch SVG file, parse e modifica il fill
-    const response = await fetch(path);
-    let svgText = await response.text();
+    icon.style.top = `${5 + Math.random() * 90}%`;
+    icon.style.left = `${5 + Math.random() * 90}%`;
+    icon.style.opacity = (0.05 + Math.random() * 0.1).toFixed(2);
 
-    // Modifica colore fill in tutte le occorrenze (semplice regex)
-    svgText = svgText.replace(/fill="[^"]*"/g, `fill="${color}"`);
+    // Animazione casuale
+    const anim = Math.random();
+    if (anim < 0.33) {
+      icon.style.animation = `float-up-down ${4000 + Math.random() * 4000}ms infinite`;
+    } else if (anim < 0.66) {
+      icon.style.animation = `float-left-right ${4000 + Math.random() * 4000}ms infinite`;
+    } else {
+      icon.style.animation = `float-zoom ${4000 + Math.random() * 4000}ms infinite`;
+    }
 
-    // Crea wrapper div per posizionare e animare
-    const wrapper = document.createElement("div");
-    wrapper.style.position = "absolute";
-    wrapper.style.top = `${top}%`;
-    wrapper.style.left = `${left}%`;
-    wrapper.style.width = "40px";
-    wrapper.style.height = "40px";
-    wrapper.style.opacity = "0.25";
-    wrapper.style.animation = `float ${5 + Math.random() * 5}s ease-in-out infinite`;
-    wrapper.style.animationDelay = `${Math.random() * 5}s`;
-    wrapper.innerHTML = svgText;
-
-    container.appendChild(wrapper);
+    container.appendChild(icon);
   }
 
-  // Movimento leggero al mouse
-  const section = document.querySelector(".hero-icons-section");
-  section.addEventListener("mousemove", (e) => {
-    const x = e.clientX / window.innerWidth - 0.5;
-    const y = e.clientY / window.innerHeight - 0.5;
-    container.style.transform = `translate(${x * 15}px, ${y * 15}px)`;
+  // Parallax effetto delicato
+  container.parentElement.addEventListener("mousemove", e => {
+    const x = (e.clientX / window.innerWidth - 0.5) * 20;
+    const y = (e.clientY / window.innerHeight - 0.5) * 20;
+    container.style.transform = `translate(${x}px, ${y}px)`;
   });
 });
 </script>
