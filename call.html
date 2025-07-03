@@ -51,6 +51,13 @@ css: /assets/css/custom-index.css
     0%, 100% { transform: translateX(0); }
     50% { transform: translateX(20px); }
   }
+  .vapi-launcher-container {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  z-index: 9999 !important;
+}
+
 </style>
 <!-- HERO SECTION -->
 <section class="hero-100hv d-flex flex-column justify-content-center text-center bg-light">
@@ -110,7 +117,7 @@ css: /assets/css/custom-index.css
 
 <!-- CTA SECTION -->
 <section>
-  <div class="container container-max800 text-center">
+  <div class="container container-max800">
     <h2 class="fw-bold mb-4">Chiama Lisa Ora</h2>
     <p class="lead mb-4">
       Clicca sul bottone in basso a destra per avviare la chiamata. Nessuna installazione richiesta, solo il tuo microfono attivo.
@@ -150,4 +157,50 @@ css: /assets/css/custom-index.css
       });
     };
   })(document, "script");
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById("iconFloatingBackground");
+  if (!container) return;
+
+  const icons = [
+    { class: "fas fa-phone", color: "#1DA1F2" },
+    { class: "fas fa-bell", color: "#FF6B6B" },
+    { class: "fas fa-calendar-alt", color: "#FFD93B" },
+    { class: "fas fa-robot", color: "#4ECDC4" },
+    { class: "fas fa-comment-dots", color: "#556270" },
+    { class: "fas fa-bolt", color: "#FF9F1C" },
+    { class: "fas fa-headset", color: "#6A4C93" }
+  ];
+
+  const iconCount = 45;
+
+  for (let i = 0; i < iconCount; i++) {
+    const iconData = icons[i % icons.length];
+    const iEl = document.createElement("i");
+
+    iEl.className = iconData.class;
+    iEl.style.color = iconData.color;
+
+    const size = 30 + Math.random() * 30;
+    iEl.style.fontSize = `${size}px`;
+    iEl.style.position = "absolute";
+
+    iEl.style.top = `${5 + Math.random() * 90}%`;
+    iEl.style.left = `${5 + Math.random() * 90}%`;
+
+    iEl.style.opacity = (0.1 + Math.random() * 0.15).toFixed(2);
+
+    const anim = Math.random() < 0.5 ? "float-up-down" : "float-left-right";
+    const duration = 3000 + Math.random() * 4000;
+    iEl.style.animation = `${anim} ${duration}ms ease-in-out infinite`;
+    iEl.style.animationDelay = `${Math.random() * duration}ms`;
+
+    container.appendChild(iEl);
+  }
+
+  // 🔴 Rimosso il parallax mousemove perché causava il bug
+});
 </script>
