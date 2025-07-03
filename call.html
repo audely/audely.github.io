@@ -1,0 +1,203 @@
+<!-- LANDING PAGE: PRENOTA UNA CHIAMATA CON LISA, ASSISTENTE VOCALE AUDELY -->
+---
+layout: default
+title: Prenota una Call con Lisa – Demo Assistente Vocale Audely
+description: Scopri come funziona Audely in una demo dal vivo. Parla ora con Lisa, l'assistente vocale AI che automatizza le chiamate aziendali e la presa appuntamenti.
+css: /assets/css/custom-index.css
+---
+
+<style>
+  .hero-100hv { height: 100vh; }
+  .hero-overlay-white { background: rgba(255,255,255,0.6); position: absolute; top:0; left:0; width:100%; height:100%; }
+  .btn-primary { background-color: #0056b3; border-color: #0056b3; }
+  .btn-primary:hover { background-color: #004494; border-color: #004494; }
+  .icon { font-size: 2rem; color: #0056b3; margin-right: 0.5rem; }
+  .card-feature { border: 1px solid #e0e0e0; border-radius: 0.5rem; padding: 1.5rem; transition: box-shadow .3s; }
+  .card-feature:hover { box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+  .testimonial-card { border: 1px solid #0056b3; border-radius: 0.5rem; padding: 1rem; margin: 1rem; }
+
+
+  .hero-icons-section {
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: #111;
+  position: relative;
+  z-index: 0;
+}
+
+.icon-floating-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.icon-floating-background img {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  opacity: 0.2;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+.highlight-white {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  padding: 0 4px;
+  line-height: 1.4;
+}
+
+.highlight-white::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  opacity: 0.7;
+  border-radius: 6px;
+}
+
+    /* Stile del bottone flottante */
+    #vapi-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      background-color: #0059ff;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 28px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      cursor: pointer;
+    }
+
+    #vapi-button:hover {
+      background-color: #0040cc;
+    }
+</style>
+
+
+<section class="bg-light py-5">
+  <div class="container container-max800 text-center">
+    <h1 class="display-4 fw-bold mb-4">Parla ora con Lisa – L'Assistente Vocale AI di Audely</h1>
+    <p class="lead mb-4">
+      Benvenuto nella demo interattiva di <strong>Audely</strong>, il sistema AI che automatizza le chiamate aziendali. In questa pagina potrai testare dal vivo le sue funzionalità parlando con <strong>Lisa</strong>, la nostra assistente vocale.
+    </p>
+    <p class="mb-4">
+      Premi il pulsante qui sotto per avviare una conversazione vocale tramite il tuo browser. In produzione, Audely si comporta come un <strong>centralino telefonico</strong>: i tuoi clienti chiamano un numero fisso e interagiscono direttamente con l'assistente AI.
+    </p>
+    <button id="vapi-button" class="btn btn-primary btn-lg px-5 mb-4">Chiama Lisa Ora</button>
+  </div>
+</section>
+
+<section class="bg-white py-5">
+  <div class="container container-max800">
+    <h2 class="fw-bold mb-4 text-center">Cosa Può Fare Lisa Durante la Chiamata</h2>
+    <ul class="lead">
+      <li>Raccogliere i tuoi dati di contatto e motivazione dell'incontro</li>
+      <li>Rispondere a domande frequenti su Audely, il team, il progetto</li>
+      <li>Verificare la disponibilità del team per un incontro</li>
+      <li>Creare un riepilogo automatico della conversazione</li>
+    </ul>
+    <p class="mt-4">
+      Questa demo è ottimizzata per angel investor, partner strategici e aziende che stanno valutando Audely come investimento o soluzione da integrare. Se sei un cliente finale, <a href="/contatti">visita la pagina Contatti</a>.
+    </p>
+  </div>
+</section>
+
+<section class="bg-light py-5">
+  <div class="container container-max800">
+    <h2 class="fw-bold mb-4 text-center">Cosa Farà Audely per la Tua Azienda</h2>
+    <p class="lead mb-3">Audely automatizza l'interazione telefonica con i tuoi clienti.</p>
+    <ol class="lead">
+      <li>Riceve le chiamate in entrata con voce naturale e accogliente</li>
+      <li>Comprende le richieste usando modelli AI avanzati</li>
+      <li>Verifica e gestisce disponibilità su Google Calendar o CRM</li>
+      <li>Conferma appuntamenti e invia notifiche automatiche</li>
+      <li>Registra i dati e li sincronizza con i tuoi sistemi IT</li>
+    </ol>
+  </div>
+</section>
+
+<section class="bg-white py-5">
+  <div class="container container-max800 text-center">
+    <h2 class="fw-bold mb-4">Perché questa Demo è Importante</h2>
+    <p class="lead mb-4">
+      In pochi minuti potrai vedere come un assistente AI vocale può sostituire un operatore umano nella presa appuntamenti, gestione FAQ e routing intelligente.
+    </p>
+    <p class="mb-4">
+      Lisa è l'interfaccia dimostrativa del backend Audely: puoi facilmente adattarla al tuo brand, settore e sistema informativo. È un primo passo per immaginare <strong>Audely come centralino AI</strong> della tua organizzazione.
+    </p>
+    <p class="mb-0">
+      Se non hai già visto la demo, <a href="#video">guarda il video qui sopra</a> per vedere Audely all'opera.
+    </p>
+  </div>
+</section>
+
+<section class="bg-light py-5 text-center">
+  <div class="container container-max800">
+    <h2 class="fw-bold mb-4">Vuoi Parlarne con il Team?</h2>
+    <p class="lead mb-3">
+      Dopo aver parlato con Lisa, riceverai una conferma via email. Se l'interesse è reale, fisseremo una call approfondita con <strong>Antonio Trento</strong>, fondatore del progetto Audely.
+    </p>
+    <a href="/assets/documents/2025-audely-business-plan.pdf" class="btn btn-outline-primary btn-lg px-5" target="_blank">Scarica il Business Plan</a>
+  </div>
+</section>
+
+<!-- SCRIPT VAPI -->
+<script>
+  var vapiInstance = null;
+  const assistant = "1cdf1916-cf62-4db2-a46a-1d514b8afa45";
+  const apiKey = "f13821ec-e1c9-4cc0-aa32-bdc1449b0d0a";
+
+  const buttonConfig = {
+    theme: "light",
+    language: "it-IT",
+    position: "bottom-right",
+    enableTranscript: true,
+    buttonLabel: "Parla con la mia assistente",
+  };
+
+  (function (d, t) {
+    var g = document.createElement(t),
+        s = d.getElementsByTagName(t)[0];
+    g.src = "https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js";
+    g.defer = true;
+    g.async = true;
+    s.parentNode.insertBefore(g, s);
+
+    g.onload = function () {
+      vapiInstance = window.vapiSDK.run({
+        apiKey: apiKey,
+        assistant: assistant,
+        config: buttonConfig,
+      });
+
+      const button = document.getElementById("vapi-button");
+      button.addEventListener("click", () => {
+        if (vapiInstance) {
+          vapiInstance.start();
+        } else {
+          alert("Errore: l'assistente vocale non è ancora pronto.");
+        }
+      });
+    };
+  })(document, "script");
+</script>
+
