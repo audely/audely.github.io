@@ -70,6 +70,7 @@ css: /assets/css/custom-index.css
     <p class="lead mb-4">
       In questa demo, Lisa ti risponderà tramite browser, ma in produzione Audely si integra con centralini reali e numeri telefonici aziendali. Il tuo cliente userà semplicemente il telefono, come sempre.
     </p>
+    <a href="#" class="btn btn-primary btn-lg px-5 my-4 vapi-start-button">Chiama Lisa Ora</a>
   </div>
 </section>
 
@@ -114,6 +115,7 @@ css: /assets/css/custom-index.css
     <p class="mt-4">
       Quindi questa demo <span class="fw-bold">prenoterà effettivamente un appuntamento con Antonio Trento</span>, il fondatore di Audely, per discutere di potenziali collaborazioni o investimenti. <span class="fw-bold">Quindi non mancare! Controlla la tua email ed accetta l'invito</span>
     </p>
+    <a href="#" class="btn btn-primary btn-lg px-5 my-4 vapi-start-button">Chiama Lisa Ora</a>
   </div>
 </section>
 
@@ -154,9 +156,23 @@ css: /assets/css/custom-index.css
         assistant: assistant,
         config: buttonConfig,
       });
+
+      // Collega tutti i bottoni con classe .vapi-start-button
+      const buttons = document.querySelectorAll(".vapi-start-button");
+      buttons.forEach(btn => {
+        btn.addEventListener("click", function (e) {
+          e.preventDefault();
+          if (vapiInstance) {
+            vapiInstance.start();
+          } else {
+            alert("L'assistente vocale non è ancora pronto. Attendi qualche secondo.");
+          }
+        });
+      });
     };
   })(document, "script");
 </script>
+
 
 
 <script>
