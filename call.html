@@ -16,11 +16,47 @@ css: /assets/css/custom-index.css
   p.lead { font-size: 1.2rem; line-height: 1.6; }
   ul { margin-left: 1.5rem; }
   section { padding-top: 4rem; padding-bottom: 4rem; }
-</style>
+  .video-container { max-width: 720px; margin-left:auto; margin-right:auto; margin-bottom: 3rem; }
 
-<!-- HERO -->
+  .hero-100hv {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .icon-floating-background i {
+    position: absolute;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    user-select: none;
+    will-change: transform;
+  }
+
+
+  .icon-floating-background svg {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    opacity: 0.15;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    user-select: none;
+    will-change: transform;
+  }
+
+  @keyframes float-up-down {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes float-left-right {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(20px); }
+  }
+</style>
+<!-- HERO SECTION -->
 <section class="hero-100hv d-flex flex-column justify-content-center text-center bg-light">
-  <div class="container container-max800 position-relative">
+  <div class="icon-floating-background" id="iconFloatingBackground"></div>
+  <div class="container container-max800 position-relative" style="z-index:1;">
     <h1 class="display-3 fw-bold mb-4">Prenota una Chiamata Demo con Lisa</h1>
     <p class="lead mb-4">
       Prova in anteprima il nostro assistente vocale AI. Lisa è pronta a mostrarti come Audely può gestire autonomamente conversazioni telefoniche, rispondere a domande e fissare appuntamenti.
@@ -31,10 +67,16 @@ css: /assets/css/custom-index.css
   </div>
 </section>
 
+
 <!-- SEZIONE EXPLAINER -->
-<section class="bg-white">
+<!-- CHI CERCHIAMO SECTION -->
+<section>
   <div class="container container-max800">
-    <h2 class="fw-bold mb-4">Cosa può fare Lisa nella Demo</h2>
+    
+    <h2 class="fw-bold mb-4">
+      Cosa può fare Lisa nella Demo
+    </h2>
+
     <ul>
       <li>Simulare una telefonata reale da parte di un partner o investitore.</li>
       <li>Riconoscere l’intento della chiamata (es. appuntamento, collaborazione, domande strategiche).</li>
@@ -46,6 +88,7 @@ css: /assets/css/custom-index.css
     </p>
   </div>
 </section>
+
 
 <!-- COME FUNZIONA AUDIBLY -->
 <section class="bg-light">
