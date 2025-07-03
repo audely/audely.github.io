@@ -132,14 +132,11 @@ css: /assets/css/custom-index.css
   </div>
 </section>
 
-
-
 <!-- VAPI BUTTON SCRIPT -->
 <script>
   var vapiInstance = null;
   const assistant = "1cdf1916-cf62-4db2-a46a-1d514b8afa45";
   const apiKey = "f13821ec-e1c9-4cc0-aa32-bdc1449b0d0a";
-
   const buttonConfig = {
     theme: "light",
     language: "it-IT",
@@ -149,8 +146,8 @@ css: /assets/css/custom-index.css
   };
 
   (function (d, t) {
-    const g = document.createElement(t),
-          s = d.getElementsByTagName(t)[0];
+    var g = document.createElement(t),
+        s = d.getElementsByTagName(t)[0];
     g.src = "https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js";
     g.defer = true;
     g.async = true;
@@ -163,24 +160,21 @@ css: /assets/css/custom-index.css
         config: buttonConfig,
       });
 
-      // 🔁 Attendi DOM completo prima di attaccare gli event listener
-      document.addEventListener("DOMContentLoaded", () => {
-        const buttons = document.querySelectorAll(".vapi-start-button");
-        buttons.forEach((btn) => {
-          btn.addEventListener("click", function (e) {
-            e.preventDefault();
-            if (vapiInstance) {
-              vapiInstance.start();
-            } else {
-              alert("L'assistente vocale non è ancora pronta. Attendi qualche secondo.");
-            }
-          });
+      // Collega tutti i bottoni con classe .vapi-start-button
+      const buttons = document.querySelectorAll(".vapi-start-button");
+      buttons.forEach(btn => {
+        btn.addEventListener("click", function (e) {
+          e.preventDefault();
+          if (vapiInstance) {
+            vapiInstance.start();
+          } else {
+            alert("L'assistente vocale non è ancora pronto. Attendi qualche secondo.");
+          }
         });
       });
     };
   })(document, "script");
 </script>
-
 
 
 
