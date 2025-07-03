@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Prenota una Call con Lisa – Audely
-description: Prova l’assistente vocale AI di Audely: prenota una chiamata demo con Lisa e scopri come rivoluzionare l’automazione telefonica per investitori, partner e aziende.
+title: Audely – Investi nel Futuro dell’Automazione Vocale AI
+description: Diventa investitore o socio operativo di Audely, l’assistente vocale AI rivoluzionario per automazione chiamate e appuntamenti. Business plan disponibile.
 css: /assets/css/custom-index.css
 ---
 <style>
@@ -16,96 +16,220 @@ css: /assets/css/custom-index.css
   p.lead { font-size: 1.2rem; line-height: 1.6; }
   ul { margin-left: 1.5rem; }
   section { padding-top: 4rem; padding-bottom: 4rem; }
+  .video-container { max-width: 720px; margin-left:auto; margin-right:auto; margin-bottom: 3rem; }
+
+  .hero-100hv {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .icon-floating-background i {
+    position: absolute;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    user-select: none;
+    will-change: transform;
+  }
+
+
+  .icon-floating-background svg {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    opacity: 0.15;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    user-select: none;
+    will-change: transform;
+  }
+
+  @keyframes float-up-down {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes float-left-right {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(20px); }
+  }
 </style>
 
-<!-- HERO -->
+<!-- HERO SECTION -->
 <section class="hero-100hv d-flex flex-column justify-content-center text-center bg-light">
-  <div class="container container-max800 position-relative">
-    <h1 class="display-3 fw-bold mb-4">Prenota una Chiamata Demo con Lisa</h1>
+  <div class="icon-floating-background" id="iconFloatingBackground"></div>
+  <div class="container container-max800 position-relative" style="z-index:1;">
+    <h1 class="display-3 fw-bold mb-4">Audely – Il Futuro dell’Automazione Vocale AI per le Aziende</h1>
     <p class="lead mb-4">
-      Prova in anteprima il nostro assistente vocale AI. Lisa è pronta a mostrarti come Audely può gestire autonomamente conversazioni telefoniche, rispondere a domande e fissare appuntamenti.
+      Audely è una piattaforma avanzata che trasforma il modo di gestire le chiamate aziendali, automatizzando la presa appuntamenti e la comunicazione con i clienti tramite intelligenza artificiale.  
     </p>
     <p class="lead mb-4">
-      In questa demo, Lisa ti risponderà tramite browser, ma in produzione Audely si integra con centralini reali e numeri telefonici aziendali. Il tuo cliente userà semplicemente il telefono, come sempre.
+      Il sistema si integra perfettamente con Google Calendar e CRM, offrendo un’assistenza 24/7 efficiente, economica e scalabile.
     </p>
+    <a href="#video" class="btn btn-primary btn-lg px-5 mb-5" aria-label="Scopri i vantaggi di Audely">Guarda il Video</a>
   </div>
 </section>
 
-<!-- SEZIONE EXPLAINER -->
-<section class="bg-white">
-  <div class="container container-max800">
-    <h2 class="fw-bold mb-4">Cosa può fare Lisa nella Demo</h2>
-    <ul>
-      <li>Simulare una telefonata reale da parte di un partner o investitore.</li>
-      <li>Riconoscere l’intento della chiamata (es. appuntamento, collaborazione, domande strategiche).</li>
-      <li>Porre domande rilevanti, registrare i dati e rispondere in modo naturale.</li>
-      <li>Generare un riepilogo automatico della call.</li>
-    </ul>
-    <p class="mt-4 lead">
-      Lisa è ottimizzata per guidare investitori, soci operativi e prospect aziendali a prendere un appuntamento informativo con Antonio Trento.
-    </p>
+
+
+
+
+<!-- VIDEO DEMO SECTION -->
+<section id="video" class="bg-white py-5">
+  <div class="container container-max800 text-center">
+    <h2 class="fw-bold mb-4">Guarda Audely in Azione</h2>
+    <div class="video-container ratio ratio-16x9 mx-auto shadow">
+      <iframe src="https://www.youtube.com/embed/TUO_VIDEO_ID" title="Demo funzionale Audely" allowfullscreen></iframe>
+    </div>
+    <p class="mb-0 text-muted">Il video mostra il prototipo attuale che gestisce chiamate e appuntamenti in modo autonomo e naturale.</p>
   </div>
 </section>
 
-<!-- COME FUNZIONA AUDELY -->
+<!-- VANTAGGI SECTION -->
 <section class="bg-light">
   <div class="container container-max800">
-    <h2 class="fw-bold mb-4">Cosa succede dopo la Call</h2>
+    <h2 class="fw-bold mb-4">Perché Investire in Audely</h2>
     <p class="lead mb-4">
-      Dopo la conversazione, Lisa registra automaticamente i dati rilevanti e genera un riepilogo strutturato con:
+      Nel mercato attuale, la gestione manuale delle chiamate e la presa appuntamenti rappresentano uno dei maggiori costi fissi per le aziende.  
+    </p>
+    <p class="lead mb-4">
+      Audely abbatte drasticamente questi costi, con un modello di spesa basato su chiamate a meno di 0,50€ per 10 minuti di conversazione, una frazione del costo di un receptionist tradizionale. 
+    </p>
+    <p class="lead mb-4"> 
+      Il sistema opera senza pause, con risposte naturali e intelligenti, e si adatta facilmente a qualsiasi flusso di lavoro aziendale.
+    </p>
+
+    <ul>
+      <li><strong>Costi ridotti:</strong> taglio netto degli stipendi e costi fissi del personale dedicato alle chiamate.</li>
+      <li><strong>Disponibilità 24/7:</strong> nessuna pausa, ferie o malattie, sempre operativo.</li>
+      <li><strong>Personalizzazione e flessibilità:</strong> backend modulare per adattare risposte, processi e integrazioni.</li>
+      <li><strong>Scalabilità:</strong> da receptionist virtuale fino a call center AI per promozione e vendita.</li>
+      <li><strong>Integrazione:</strong> sincronizzazione perfetta con Google Calendar, CRM e sistemi ERP.</li>
+    </ul>
+
+    <p class="mt-4">
+      Inoltre, Audely può evolvere in molteplici direzioni oltre il semplice scheduling, come:
     </p>
     <ul>
-      <li>Nome e contatti dell’interlocutore</li>
-      <li>Motivo della chiamata</li>
-      <li>Data e ora proposta per l’incontro</li>
-      <li>Preferenze (Zoom, Meet, in presenza)</li>
+      <li><strong>Supporto clienti automatizzato:</strong> gestione FAQ, assistenza post-vendita e ticketing.</li>
+      <li><strong>Qualificazione lead:</strong> filtraggio e raccolta dati di potenziali clienti in chiamata.</li>
+      <li><strong>Promozione prodotti e offerte:</strong> chiamate attive per campagne marketing e upselling.</li>
+      <li><strong>Gestione prenotazioni e ordini:</strong> assistenza vocale per processi di vendita diretta.</li>
     </ul>
-    <p class="mt-4">
-      Tutto il flusso è completamente automatizzato e può essere connesso con Google Calendar, CRM, e sistemi di gestione aziendale.
-    </p>
   </div>
 </section>
 
-<!-- CTA SECTION -->
+<!-- CHI CERCHIAMO SECTION -->
+<section>
+  <div class="container container-max800">
+    
+    <h2 class="fw-bold mb-4">
+      Cerchiamo Angel Investors, Soci Operativi e Aziende interessate ad acquistare o co-sviluppare Audely tramite Spin Off
+    </h2>
+
+    <p class="lead mb-4">
+      Siamo in cerca di <span class="fw-bold">angel investors</span> che vogliano entrare in un progetto tecnologico con elevato potenziale di crescita e ritorno sull’investimento.  
+    </p>
+      <p class="lead mb-4"> 
+      Cerchiamo anche <span class="fw-bold">soci operativi</span> con esperienza commerciale e capacità strategiche per portare Audely sul mercato e sviluppare partnership di valore.  
+    </p>
+    <p class="lead mb-4">
+      Inoltre, siamo aperti a collaborazioni con <span class="fw-bold">aziende interessate ad acquisire, licenziare o co-sviluppare Audely</span> tramite spin off o partnership strategiche.
+    </p>
+
+    <p class="mb-4">
+      Questa è un’opportunità unica per partecipare a un progetto già dotato di prototipo funzionante, con metriche di costo validate e un business plan dettagliato pronto per essere condiviso.
+    </p>  
+    <p class="mb-4">
+      La struttura di Audely è pensata per una rapida espansione, sia in Italia che all’estero, in settori verticali quali healthcare, servizi finanziari, e-commerce e molti altri.
+    </p>
+
+    <div class="d-flex justify-content-center gap-3 flex-wrap">
+      <a href="https://forms.gle/sHu3vGUkzZtjp3xdA" class="btn btn-primary btn-lg px-5" target="_blank" rel="noopener noreferrer" aria-label="Contatta Audely compilando il form">Compila il form di selezione</a>
+      <a href="/assets/documents/2025-audely-business-plan.pdf" class="btn btn-outline-primary btn-lg px-5" aria-label="Scarica il Business Plan Audely">Scarica il Business Plan</a>
+    </div>
+  </div>
+</section>
+
+<!-- COME FUNZIONA SECTION -->
+<section class="bg-light">
+  <div class="container container-max800">
+    <h2 class="fw-bold mb-4">Come Funziona Audely</h2>
+    <p class="lead mb-4">
+      Audely sfrutta avanzate tecnologie di riconoscimento vocale, comprensione del linguaggio naturale e motori di automazione per:
+    </p>
+
+    <ol>
+      <li><strong>Riconoscere l’intento</strong> di chi chiama, estraendo i dati rilevanti e la natura della richiesta.</li>
+      <li><strong>Interagire in modo naturale</strong>, rispondendo con voce sintetica in modo chiaro, empatico e coerente.</li>
+      <li><strong>Verificare disponibilità</strong> direttamente su Google Calendar o CRM integrati.</li>
+      <li><strong>Confermare appuntamenti</strong> e inviare notifiche automatiche via email o SMS.</li>
+      <li><strong>Registrare informazioni</strong> e aggiornare i sistemi aziendali in tempo reale.</li>
+    </ol>
+
+    <p class="mt-4">
+      Tutto questo riduce drasticamente la necessità di personale umano per compiti routinari, liberando risorse per attività ad alto valore strategico.
+    </p>
+  </div>
+</section>
+<section> 
+<div class="container container-max800">
+  <h2 class="display-5 fw-bold mb-4">Domande frequenti</h2>
+  {% include accordion-faq.html %}
+</div>
+</section>
+<!-- CONCLUSIONI SECTION -->
 <section>
   <div class="container container-max800 text-center">
-    <h2 class="fw-bold mb-4">Chiama Lisa Ora</h2>
-    <p class="lead mb-4">
-      Clicca sul bottone in basso a destra per avviare la chiamata. Nessuna installazione richiesta, solo il tuo microfono attivo.
+    <h2 class="fw-bold mb-4">Unisciti a Noi e Cambia il Futuro della Comunicazione Aziendale</h2>
+    <p class="lead mb-5">
+      Audely è più di un semplice assistente vocale: è il cuore pulsante di una nuova era di automazione intelligente che farà risparmiare tempo e denaro alle aziende, migliorando al contempo l’esperienza cliente.
     </p>
-    <p class="text-muted">
-      Se il bottone non appare subito, attendi qualche secondo per il caricamento del sistema.
-    </p>
+    <a href="https://forms.gle/sHu3vGUkzZtjp3xdA" class="btn btn-primary btn-lg px-5 mb-3" target="_blank" rel="noopener noreferrer" aria-label="Contatta Audely compilando il form">Compila il form di selezione</a><br>
+    <a href="/assets/documents/2025-audely-business-plan.pdf" class="btn btn-outline-primary btn-lg px-5" aria-label="Scarica il Business Plan Audely">Scarica il Business Plan</a>
   </div>
 </section>
 
-<!-- VAPI BUTTON SCRIPT -->
 <script>
-  var vapiInstance = null;
-  const assistant = "1cdf1916-cf62-4db2-a46a-1d514b8afa45";
-  const apiKey = "f13821ec-e1c9-4cc0-aa32-bdc1449b0d0a";
-  const buttonConfig = {
-    theme: "light",
-    language: "it-IT",
-    position: "bottom-right",
-    enableTranscript: true,
-    buttonLabel: "Parla con la mia assistente"
-  };
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById("iconFloatingBackground");
+  if (!container) return;
 
-  (function (d, t) {
-    var g = document.createElement(t),
-        s = d.getElementsByTagName(t)[0];
-    g.src = "https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js";
-    g.defer = true;
-    g.async = true;
-    s.parentNode.insertBefore(g, s);
+  const icons = [
+    { class: "fas fa-phone", color: "#1DA1F2" },
+    { class: "fas fa-bell", color: "#FF6B6B" },
+    { class: "fas fa-calendar-alt", color: "#FFD93B" },
+    { class: "fas fa-robot", color: "#4ECDC4" },
+    { class: "fas fa-comment-dots", color: "#556270" },
+    { class: "fas fa-bolt", color: "#FF9F1C" },
+    { class: "fas fa-headset", color: "#6A4C93" }
+  ];
 
-    g.onload = function () {
-      vapiInstance = window.vapiSDK.run({
-        apiKey: apiKey,
-        assistant: assistant,
-        config: buttonConfig,
-      });
-    };
-  })(document, "script");
+  const iconCount = 45;
+
+  for (let i = 0; i < iconCount; i++) {
+    const iconData = icons[i % icons.length];
+    const iEl = document.createElement("i");
+
+    iEl.className = iconData.class;
+    iEl.style.color = iconData.color;
+
+    const size = 30 + Math.random() * 30;
+    iEl.style.fontSize = `${size}px`;
+    iEl.style.position = "absolute";
+
+    iEl.style.top = `${5 + Math.random() * 90}%`;
+    iEl.style.left = `${5 + Math.random() * 90}%`;
+
+    iEl.style.opacity = (0.1 + Math.random() * 0.15).toFixed(2);
+
+    const anim = Math.random() < 0.5 ? "float-up-down" : "float-left-right";
+    const duration = 3000 + Math.random() * 4000;
+    iEl.style.animation = `${anim} ${duration}ms ease-in-out infinite`;
+    iEl.style.animationDelay = `${Math.random() * duration}ms`;
+
+    container.appendChild(iEl);
+  }
+
+  // 🔴 Rimosso il parallax mousemove perché causava il bug
+});
 </script>
