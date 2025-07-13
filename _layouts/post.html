@@ -60,8 +60,13 @@
   {{ page.script }}
 {% endif %}
 {% include translation_prompt.html %}
-<!-- CTA Audely -->
+<!-- CTA Audely con pulsante X -->
 <div id="cta-audely" style="display: none; position: fixed; bottom: 0; left: 0; width: 100%; background: #000; color: #fff; padding: 16px 24px; text-align: center; z-index: 9999; box-shadow: 0 -4px 10px rgba(0,0,0,0.2);">
+  <!-- Pulsante chiudi -->
+  <button id="cta-close-btn" aria-label="Chiudi" style="position: absolute; top: 8px; right: 12px; background: transparent; border: none; color: #fff; font-size: 1.2rem; cursor: pointer;">
+    &times;
+  </button>
+
   <div style="max-width: 800px; margin: 0 auto;">
     <span style="display: block; font-size: 1rem; margin-bottom: 8px;">
       🚀 Vuoi portare la tua azienda nell’era dell’automazione vocale?
@@ -71,10 +76,12 @@
     </a>
   </div>
 </div>
+
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     let ctaShown = false;
     const cta = document.getElementById("cta-audely");
+    const closeBtn = document.getElementById("cta-close-btn");
 
     window.addEventListener("scroll", function () {
       const scrollY = window.scrollY || window.pageYOffset;
@@ -87,8 +94,14 @@
         ctaShown = true;
       }
     });
+
+    // Gestione click sulla X
+    closeBtn.addEventListener("click", function () {
+      cta.style.display = "none";
+    });
   });
 </script>
+
 
 </body>
 </html>
