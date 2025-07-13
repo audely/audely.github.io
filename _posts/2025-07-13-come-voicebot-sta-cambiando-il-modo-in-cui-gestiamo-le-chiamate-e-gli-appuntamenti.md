@@ -1,6 +1,6 @@
 ---
 title: "Come voicebot sta cambiando il modo in cui gestiamo le chiamate e gli appuntamenti"
-date: 2025-07-14 +0200
+date: 2025-07-13 +0200
 layout: post
 image: assets/images/Come_voicebot_sta_cambiando_il_modo_in_cui_gestiamo_le_chiamate_e_gli_appuntamenti.jpg
 og_image: assets/images/Come_voicebot_sta_cambiando_il_modo_in_cui_gestiamo_le_chiamate_e_gli_appuntamenti.jpg
