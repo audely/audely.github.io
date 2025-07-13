@@ -52,8 +52,8 @@ plugins:
 navigation:
   - title: "Home"
     url: "/"
-#  - title: "Blog"
-#    url: "/blog/"
+  - title: "Blog"
+    url: "/blog/"
 #  - title: "Portfolio"
 #    url: "/portfolio/"
 #  - title: "Mostre"
