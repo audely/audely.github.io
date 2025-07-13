@@ -84,6 +84,14 @@ faq:
     answer: "Audely implementa protocolli di sicurezza avanzati, crittografia end-to-end e policy di accesso controllato per proteggere tutte le informazioni scambiate durante le interazioni vocali."
   - question: "Come posso richiedere una demo o una consulenza su Audely?"
     answer: "Contattaci tramite il <a href=\"https://forms.gle/sHu3vGUkzZtjp3xdA\" class=\"text-black fw-bold\">form di selezione</a> per programmare una demo gratuita e valutare insieme la soluzione più adatta al tuo business."
+  - question: Come gestisce Audely le allucinazioni dell’intelligenza artificiale?
+    answer: >
+      <p>Audely è progettata per ridurre al minimo il rischio di allucinazioni grazie a una struttura conversazionale chiara e a vincoli funzionali precisi.</p>
+      <p>L’assistente opera tramite chiamate vocali, quindi riceve input reali da un numero di telefono, con intenti chiari e limitati (es. prenotare un appuntamento). Questo riduce drasticamente l’ambiguità rispetto ai chatbot testuali.</p>
+      <p>Inoltre, ogni data o orario viene sempre riconfermato prima della registrazione, ad esempio: “Mi conferma che desidera prenotare giovedì alle 15:00?”</p>
+      <p>Audely non inventa informazioni: utilizza una knowledge base verificata, costantemente aggiornata dal team, e se non è certa di una risposta, chiede chiarimenti o passa la conversazione a un contatto umano.</p>
+      <p>Ogni chiamata viene infine sintetizzata, salvata e monitorata per garantire la qualità del servizio e la tracciabilità.</p>
+      <p>In sintesi: grazie a input controllati, funzione unica (prenotazione), conferme esplicite e base informativa sicura, Audely mantiene l’AI sotto controllo.</p>
 
 social:
   instagram: "https://www.instagram.com/audely"
