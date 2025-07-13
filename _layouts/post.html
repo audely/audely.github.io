@@ -89,7 +89,7 @@
       const windowHeight = window.innerHeight;
       const scrollPercent = (scrollY + windowHeight) / documentHeight;
 
-      if (!ctaShown && scrollPercent >= 0.25) {
+      if (!ctaShown && scrollPercent >= 0.50) {
         cta.style.display = "block";
         ctaShown = true;
       }
