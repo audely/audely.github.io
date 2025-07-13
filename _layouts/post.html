@@ -60,5 +60,35 @@
   {{ page.script }}
 {% endif %}
 {% include translation_prompt.html %}
+<!-- CTA Audely -->
+<div id="cta-audely" style="display: none; position: fixed; bottom: 0; left: 0; width: 100%; background: #000; color: #fff; padding: 16px 24px; text-align: center; z-index: 9999; box-shadow: 0 -4px 10px rgba(0,0,0,0.2);">
+  <div style="max-width: 800px; margin: 0 auto;">
+    <span style="display: block; font-size: 1rem; margin-bottom: 8px;">
+      🚀 Vuoi portare la tua azienda nell’era dell’automazione vocale?
+    </span>
+    <a href="https://audely.github.io" class="btn btn-primary" style="background-color: #38bdf8; border: none; color: #000; font-weight: bold; padding: 10px 20px; border-radius: 8px; text-decoration: none;">
+      Prenota una call gratuita con Audely
+    </a>
+  </div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    let ctaShown = false;
+    const cta = document.getElementById("cta-audely");
+
+    window.addEventListener("scroll", function () {
+      const scrollY = window.scrollY || window.pageYOffset;
+      const documentHeight = document.documentElement.scrollHeight;
+      const windowHeight = window.innerHeight;
+      const scrollPercent = (scrollY + windowHeight) / documentHeight;
+
+      if (!ctaShown && scrollPercent >= 0.25) {
+        cta.style.display = "block";
+        ctaShown = true;
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
