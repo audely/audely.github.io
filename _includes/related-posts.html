@@ -1,0 +1,36 @@
+{% assign current_url = page.url %}
+{% assign current_date = page.date %}
+{% assign related_posts = "" | split: "" %}
+
+{% if page.related %}
+  {% for rel_url in page.related %}
+    {% assign rel_post = site.posts | where: "url", rel_url | first %}
+    {% if rel_post %}
+      {% assign related_posts = related_posts | push: rel_post %}
+    {% endif %}
+  {% endfor %}
+{% else %}
+  {% assign older_posts = site.posts | where_exp: "item", "item.date < page.date" | sort: "date" | reverse %}
+  {% assign newer_posts = site.posts | where_exp: "item", "item.date > page.date" | sort: "date" %}
+  {% assign fallback_posts = older_posts | concat: newer_posts %}
+  {% assign fallback_posts = fallback_posts | reject: "url", current_url %}
+  {% assign related_posts = fallback_posts | slice: 0, 3 %}
+{% endif %}
+
+{% if related_posts.size > 0 %}
+<div class="card mt-5 shadow-sm">
+  <div class="card-header bg-dark text-white fw-bold">
+    🔗 Articoli correlati
+  </div>
+  <ul class="list-group list-group-flush">
+    {% for post in related_posts %}
+      <li class="list-group-item">
+        <a href="{{ post.url | relative_url }}" class="text-primary text-decoration-none">
+          {{ post.title }}
+        </a><br>
+        <small class="text-muted">{{ post.date | date: "%d %b %Y" }}</small>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}
