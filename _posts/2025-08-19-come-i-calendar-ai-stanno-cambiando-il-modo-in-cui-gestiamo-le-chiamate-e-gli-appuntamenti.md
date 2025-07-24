@@ -1,5 +1,5 @@
 ---
-title: "Come calendar AI sta cambiando il modo in cui gestiamo le chiamate e gli appuntamenti"
+title: "Come i calendar AI stanno cambiando il modo in cui gestiamo le chiamate e gli appuntamenti"
 date: 2025-08-19 +0200
 layout: post
 image: assets/images/Come_calendar_AI_sta_cambiando_il_modo_in_cui_gestiamo_le_chiamate_e_gli_appuntamenti.jpg

@@ -1,5 +1,5 @@
 ---
-title: "Come AI conversazionale sta cambiando il modo in cui gestiamo le chiamate e gli appuntamenti"
+title: "Come le AI conversazionali stanno cambiando il modo in cui gestiamo le chiamate e gli appuntamenti"
 date: 2025-07-22 +0200
 layout: post
 image: assets/images/Come_AI_conversazionale_sta_cambiando_il_modo_in_cui_gestiamo_le_chiamate_e_gli_appuntamenti.jpg

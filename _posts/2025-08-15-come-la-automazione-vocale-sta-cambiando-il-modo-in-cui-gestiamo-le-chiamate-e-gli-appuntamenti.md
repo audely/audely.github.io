@@ -1,5 +1,5 @@
 ---
-title: "Come automazione vocale sta cambiando il modo in cui gestiamo le chiamate e gli appuntamenti"
+title: "Come l'automazione vocale sta cambiando il modo in cui gestiamo le chiamate e gli appuntamenti"
 date: 2025-08-15 +0200
 layout: post
 image: assets/images/Come_automazione_vocale_sta_cambiando_il_modo_in_cui_gestiamo_le_chiamate_e_gli_appuntamenti.jpg

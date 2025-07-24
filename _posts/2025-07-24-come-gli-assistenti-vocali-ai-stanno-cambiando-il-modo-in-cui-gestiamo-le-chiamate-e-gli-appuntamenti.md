@@ -1,5 +1,5 @@
 ---
-title: "Come assistente vocale AI sta cambiando il modo in cui gestiamo le chiamate e gli appuntamenti"
+title: "Come gli assistenti vocali AI stanno cambiando il modo in cui gestiamo le chiamate e gli appuntamenti"
 date: 2025-07-24 +0200
 layout: post
 image: assets/images/Come_assistente_vocale_AI_sta_cambiando_il_modo_in_cui_gestiamo_le_chiamate_e_gli_appuntamenti.jpg
